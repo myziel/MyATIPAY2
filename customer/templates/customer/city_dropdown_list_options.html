@@ -1,0 +1,9 @@
+
+
+{% if cities %}
+    {% for city in cities %}
+    <option value="{{ city.city_id }}">{{ city.city }}</option>
+    {% endfor %}
+{% else %}
+    <option value="">---------</option>
+{%endif%}

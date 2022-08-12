@@ -1,0 +1,8 @@
+pip install django-ipware
+pip install geoip2
+pip install django-crispy-forms
+pip install django-widget-tweaks
+pip install mysqlclient
+pip install django-urlcrypt
+pip install django-mptt
+pip install Pillow

@@ -1,0 +1,130 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+{% load static %}
+
+<!-- Set upper left corner logo -->
+{% block logo %}
+<a href="/" class="brand-link">
+    <img src="{%static 'images/logo.png' %}" alt="My Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    {% block logo_text %}<span class="brand-text font-weight-light">MyATIPAY</span>{% endblock %}
+</a>
+{% endblock logo %}
+
+<!-- Remove user panel from left sidebar -->
+{% block user_panel %}
+{% endblock user_panel %}
+
+<!-- Set header for side navbar -->
+{% block nav_heading %}
+<h4>Dashboard</h4>
+<br />
+
+{% endblock nav_heading %}
+
+<!-- Define navbar links -->
+{% block nav_links %}
+<h5 style="text-align:center; color:white;">Customer: {{first_name}} {{last_name}}</h5>
+
+
+<li>
+    <a href="/cHomepage/{{customer_id}}/{{login_id}}/{{o_mptt_level}}">
+        <i class="fa fa-home"></i>
+        <span>Customer Home</span>
+    </a>
+</li>
+<li>
+    <a href="/cProfile/{{customer_id}}/{{login_id}}/{{o_mptt_level}}">
+        <i class="fa fa-cog"></i>
+        <span>My Profile</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <i class="fa fa-cog"></i>
+        <span>Manage Orders</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <i class="fa fa-cog"></i>
+        <span>E-Wallet</span>
+    </a>
+</li>
+<li class="nav-item has-treeview">
+    <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-copy"></i>
+        <p>
+            My Earnings
+            <i class="fas fa-angle-left right"></i>
+            <span class="badge badge-info right">5</span>
+        </p>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Personal Earning</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/level_view/{{customer_id}}/{{customer_id}}/{{o_mptt_level}}/{{o_mptt_level}}/{{login_id}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Level System</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/binary_view/{{customer_id}}/{{customer_id}}/{{o_mptt_level}}/{{o_mptt_level}}/{{login_id}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Binary System</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Leadership System</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Auto Net</p>
+            </a>
+        </li>
+
+    </ul>
+</li>
+
+
+
+
+<li>
+    <a href="#">
+        <i class="fa fa-cog"></i>
+        <span>Order History</span>
+    </a>
+</li>
+<li>
+    <a href="#">
+        <i class="fa fa-cog"></i>
+        <span>Switch to Vendor</span>
+    </a>
+</li>
+<li>
+    <a href="/">
+        <i class="fa fa-cog"></i>
+        <span>Points Transaction</span>
+    </a>
+</li>
+<li>
+    <a href="/">
+        <i class="fa fa-cog"></i>
+        <span>Change Password</span>
+    </a>
+</li>
+<li>
+    <a href="/cLogout">
+        <i class="fa fa-cog"></i>
+        <span>Logout</span>
+    </a>
+</li>
+
+    {% endblock nav_links %}

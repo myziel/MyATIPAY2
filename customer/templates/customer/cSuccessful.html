@@ -1,0 +1,47 @@
+<!--
+
+Customer customerlogin.html
+Developed By : Erum Mehmood & Khalid Awan
+
+-->
+{% load static %}
+<!DOCTYPE html>
+{% load widget_tweaks %}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>MyATIPAY</title>
+
+</head>
+<body>
+    {% include "main/navbar.html" %}
+    {%block content%}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <h3 style="text-align:center; color:yellow;">
+                        Congratulations! {{first_name}} {{last_name}}, Your new account has been successfully generated!
+                        <br /><br />
+                        Your username is ({{username}}).
+                        <br /><br />
+                        <div class="box">
+                            <a href="/cLogin">
+                                <i class="fa fa-home"></i>
+                                <span>Click here to login to your dashboard</span>
+                            </a>
+                            </div>
+                        </h3>
+
+</div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    {%endblock content%}
+    {% include "main/footer.html" %}
+</body>
+</html>

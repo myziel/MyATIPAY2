@@ -1,0 +1,39 @@
+<!--
+
+Customer logout.html
+Developed By : Erum Mehmood & Khalid Awan
+
+home page will be displayed after logout
+
+-->
+{% load static %}
+<!DOCTYPE html>
+{% load widget_tweaks %}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>MyATIPAY</title>
+
+</head>
+<body>
+    {% include "main/navbar.html" %}
+    {%block content%}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box">
+                    <h2 style="text-align:center; color:yellow;">{{first_name}} {{last_name}}, You are successfully logout!</h2>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    {%endblock content%}
+    {% include "main/footer.html" %}
+</body>
+</html>

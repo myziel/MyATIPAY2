@@ -1,0 +1,94 @@
+<!--
+
+Customer customerhome.html
+Developed By : Erum Mehmood & Khalid Awan
+
+home page of customer will be displayed after login or signup
+-->
+{% extends 'customer/cBase.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+
+
+
+
+
+  {%if products%}
+<h3 style="text-align:center; color:yellow;">{{word}}</h3>
+<br>
+<!-- products data starttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt -->
+<div class="row">
+
+    {% for p in products %}
+    <!-- card1 -->
+    <div class="column">
+        <div class="container page-wrapper" style="width: 450px;">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="el-wrapper">
+                        <div class="box-up">
+                            <img class="img" src="{% static p.product_image.url %}" alt="product pic" height="300px" width="300px">
+                            <div class="img-info">
+                                <div class="info-inner">
+                                    <span style="background-color:#08050a; color:yellow;" class="p-company">{{p.name}}</span>
+
+                                </div>
+                                <div class="a-size">{{p.description}}</div>
+                            </div>
+                        </div>
+
+                        <div class="box-down">
+                            <div class="h-bg">
+                                <div class="h-bg-inner"></div>
+                            </div>
+
+                            <a class="cart" href="{% url 'add-to-cart' p.id  %}">
+                                <span class="price">₹ {{p.price}}</span>
+                                <span class="add-to-cart">
+                                    <span class="txt">Add in cart</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- card1 end -->
+    {% if forloop.counter|divisibleby:"3" %}
+</div>
+<div class="row">
+    <br><br><br><br><br>
+    {% endif %}
+
+    {% endfor %}
+</div>
+<!-- products data enddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd -->
+{%endif%}
+
+<h3 style="text-align:center; color:black;">
+    {{first_name}} {{last_name}}, You are logged in as ({{ username }})Customer!
+    <br /><br />
+    You can now take advantage of member privileges to enhance your online shopping experience with us.
+
+    If you have ANY questions about the operation of this online shop, please e-mail the store owner.
+
+    A confirmation has been sent to the provided e-mail address. If you have not received it within the hour, please contact us.
+</h3>
+
+{% csrf_token %}
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+

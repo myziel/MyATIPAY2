@@ -1,0 +1,34 @@
+<!--
+
+Main homebase.html
+Developed By : Erum Mehmood & Khalid Awan
+
+-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>MyATIPAY</title>
+</head>
+
+<body>
+    {%if request.user.is_authenticated%}
+    {% include "main/navbar.html" %}
+    {%else%}
+    {% include "main/navbar.html" %}
+    {%endif%}
+
+
+    {%block content%}
+
+    {%endblock content%}
+
+
+    {% include "main/footer.html" %}
+</body>
+
+
+</html>

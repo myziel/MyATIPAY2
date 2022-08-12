@@ -1,0 +1,84 @@
+<!--
+
+Main customersignup.html
+Developed By : Erum Mehmood & Khalid Awan
+
+-->
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up Customer</title>
+
+
+</head>
+<body>
+    {% include "main/navbar.html" %}
+    
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-10">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+
+                    <h4 style="text-align:center; color:yellow;">{{ message }}</h4>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                
+                <div class="card">
+                    <form class="box" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <h1>CUSTOMER SIGNUP</h1>
+                        <p class="text-muted"> Please enter your details to create account !</p>
+                        {% render_field form1.customer_id class="form-control" placeholder="Customer ID" %}
+                        {% render_field form1.upliner class="form-control" placeholder="Upliner ID" %}
+                        {% render_field form1.ref_id class="form-control" placeholder="Referral ID" %}
+
+                        <label>Position</label>
+                        {% render_field form1.position class="form-select" %}
+
+                        {% render_field form2.first_name class="form-control" placeholder="First Name" %}
+                        {% render_field form2.last_name class="form-control" placeholder="Last Name" %}
+                        {% render_field form1.username class="form-control" placeholder="Username" %}
+                        {% render_field form1.password1 class="form-control" placeholder="Password" %}
+                        {% render_field form1.password2 class="form-control" placeholder="Confirm Password" %}
+
+                        <input type="submit" name="" value="Create">
+
+                    </form>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br />
+    <br><br><br><br><br>
+    {% include "main/footer.html" %}
+</body>
+</html>

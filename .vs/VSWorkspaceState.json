@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\customer",
+    "\\customer\\templates",
+    "\\customer\\templates\\adminlte",
+    "\\customer\\templates\\adminlte\\lib",
+    "\\customer\\templates\\customer",
+    "\\main\\templates",
+    "\\main\\templates\\main"
+  ],
+  "SelectedNode": "\\customer\\views.py",
+  "PreviewInSolutionExplorer": false
+}
